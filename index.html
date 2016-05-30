@@ -1,0 +1,58 @@
+<html>
+
+  <head>
+    <title>kbs code snippets</title>
+
+    <script id="test" type="application/xml" version="1.0" encoding="utf-8">
+      <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns="http://clients.mindbodyonline.com/api/0_5">
+        <soapenv:Header/>
+        <soapenv:Body>
+           <GetClassSchedules>
+              <Request>
+                 <SourceCredentials>
+                    <SourceName>{name}</SourceName>
+                    <Password>{key}</Password>
+                    <SiteIDs>
+                       <int>-99</int>
+                    </SiteIDs>
+                 </SourceCredentials>
+                 <XMLDetail>Full</XMLDetail>
+                 <PageSize>10</PageSize>
+                 <CurrentPageIndex>0</CurrentPageIndex>
+                 <EndDate>2017-02-15</EndDate>
+              </Request>
+           </GetClassSchedules>
+        </soapenv:Body>
+     </soapenv:Envelope>
+    </script>
+
+    <script type="text/javascript">
+      function runDemo() {
+        var schedule = document.getElementById("test").textContent;
+        document.getElementById("view").innerHTML = schedule;
+      }
+    </script>
+
+  </head>
+
+  <body onload="runDemo()";>
+
+    <div>
+      <h1>This is the Page</h1>
+    </div>
+
+    <div id="view">
+    </div>
+
+
+  <!-- // (function () {
+  // 	var iframe = document.getElementById("myframe");
+  // 	var innerDoc = iframe.contentDocument || iframe.contentWindow.document;
+  // 	var list = innerDoc.getElementById("introduction");
+  // 	console.log(innerDoc);
+  // 	document.getElementById("content-list").innerHTML = "Bugga";
+  // })(); -->
+
+  </body>
+
+</html>

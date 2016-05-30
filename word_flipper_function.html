@@ -1,0 +1,49 @@
+<!-- flip through word options -->
+<div>
+	<h3>
+		<span>
+			Be 
+		</span>
+		<span id="flipper">
+			Special
+		</span>
+	</h3>
+</div>
+
+<!-- script to cycle through words -->
+<script type="text/javascript">
+	var wordChoices = [
+		"Coolio",
+		"Awesome Sause",
+		"Smelly",
+		"for Goober",
+		"Hot Stuff!",
+		"Bad to the Bone"
+	];
+
+	// Durstenfeld Shuffle
+	function shuffleArray(array) {
+		for ( i = array.length - 1; i > 0; i-- ) {
+			var j = Math.floor(Math.random() * ( i * 1));
+			var temp = array[i];
+			array[i] = array[j];
+			array[j] = temp;
+		}
+		return array;
+	}
+
+	function wordFlipper(array) {
+		array = array || shuffledWords;
+		document.getElementById("flipper").innerHTML = array[i];
+		i++;
+
+		if( i < array.length ) {
+			setTimeout( wordFlipper, 300 );
+		}
+	}
+
+	shuffledWords = shuffleArray(wordChoices);
+	var i = 0;
+	wordFlipper();
+	
+</script>
